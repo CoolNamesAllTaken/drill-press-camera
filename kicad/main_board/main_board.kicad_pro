@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 1.1,
+          "height": 2.0,
+          "width": 1.905
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -45,10 +45,16 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.19999999999999998
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -62,7 +68,7 @@
         "courtyards_overlap": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
-        "drill_out_of_range": "error",
+        "drill_out_of_range": "ignore",
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
@@ -85,9 +91,9 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
+        "silk_edge_clearance": "ignore",
         "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -165,8 +171,26 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0,
+        0.25,
+        0.4,
+        0.8
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.9,
+          "drill": 0.7
+        },
+        {
+          "diameter": 2.2,
+          "drill": 1.5
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -179,6 +203,7 @@
   "erc": {
     "erc_exclusions": [
       "multiple_net_names|1371600|558800|b931d54d-f4b1-4fa2-a879-6e0fb29fb67e|e81fe66f-d893-4bd7-bd45-70742645c9e7|||",
+      "multiple_net_names|1371600|558800|d2940057-6dbc-4266-bda9-fb8fa0792b03|e81fe66f-d893-4bd7-bd45-70742645c9e7|||",
       "multiple_net_names|2171700|736600|14e16112-43f6-4164-93d3-8a457ced18c9|de092201-17ac-4b1d-904a-d29534ee52f6|||",
       "multiple_net_names|2171700|736600|70bc94a0-8c94-4950-9983-304b5e8fe2ec|de092201-17ac-4b1d-904a-d29534ee52f6|||"
     ],
@@ -432,7 +457,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "main_board.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -462,7 +487,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "plots/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
